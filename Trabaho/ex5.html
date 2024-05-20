@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encontrar o Maior Valor</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #4c001f; /* vinho escuro */
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    #container {
+        text-align: center;
+    }
+    input {
+        padding: 10px;
+        margin: 10px;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #8b0000; /* vinho mais claro */
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #6b0000; /* vinho mais escuro */
+    }
+</style>
+</head>
+<body>
+
+<div id="container">
+    <h2>Encontre o Maior Valor</h2>
+    <input type="number" id="valor1" placeholder="Insira o primeiro valor">
+    <br>
+    <input type="number" id="valor2" placeholder="Insira o segundo valor">
+    <br>
+    <button onclick="encontrarMaior()">Encontrar Maior Valor</button>
+    <p id="resultado"></p>
+</div>
+
+<script>
+function encontrarMaior() {
+    var valor1 = parseFloat(document.getElementById("valor1").value);
+    var valor2 = parseFloat(document.getElementById("valor2").value);
+    
+    if (isNaN(valor1) || isNaN(valor2)) {
+        document.getElementById("resultado").innerHTML = "Por favor, insira dois valores válidos.";
+    } else {
+        var maior = (valor1 > valor2) ? valor1 : valor2;
+        document.getElementById("resultado").innerHTML = "O maior valor é: " + maior;
+    }
+}
+</script>
+
+</body>
+</html>
